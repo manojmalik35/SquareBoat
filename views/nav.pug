@@ -1,0 +1,12 @@
+nav
+    ul.navigation
+      li.nav-line
+        if !user
+          a.white-anchors(href='/login') LOGIN
+        else
+            a.white-anchors(href='/me') #{user.name}
+      li.nav-line
+        if user
+          a.white-anchors(href='/logout') LOGOUT 
+        else
+          a.white-anchors(href='/signup') SIGN UP

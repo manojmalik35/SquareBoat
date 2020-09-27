@@ -1,0 +1,15 @@
+.card.mb-4
+    h5.card-header #{job.title}
+    .card-body
+        .card-body-left
+            p.card-text #{job.description}
+            p.card-text #{job.company}
+            p.card-text #{job.package}
+        .card-body-right
+            if user.role=="Recruiter"
+                a.btn.btn-primary.card-button(href=`/candidates/${job["_id"]}`) View applied candidates
+                a.btn.btn-primary.card-button.delete(href='' id=`${job["_id"]}`) X
+            else if job.isAvailable
+                a.btn.btn-primary.card-button.apply(href='' id=`${job["_id"]}`) Apply
+
+            

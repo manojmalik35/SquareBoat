@@ -1,0 +1,25 @@
+extend base
+block header
+    include nav
+block content
+    h2 
+        | New Job
+    form.new-job
+        .entry
+            .entry-text 
+                | Title
+            input(type='text' name='title' placeholder='Job Title' required)
+        .entry
+            .entry-text 
+                | Company
+            input(type='text' name='company' placeholder='Company')
+        .entry
+            .entry-text 
+                | Description
+            textarea(name='description' id='description' placeholder='Description')
+        .entry
+            .entry-text 
+                | Annual Package
+            input(type="number" id="package" name="package" min="250000" max="2500000" step="50000")        
+        .btn-parent
+            button.btn.btn-full.form-button(type='submit') Post

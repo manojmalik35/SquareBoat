@@ -1,0 +1,18 @@
+extend base
+block header
+    include nav
+block content
+    h3 Name : #{user.name}
+    h3 Email : #{user.email}
+    .btn-parent
+        if user.role=="Recruiter"
+            a.btn.btn-full.profile-btn.top(href='/newjob') Post a New Job
+        else
+            a.btn.btn-full.profile-btn.top(href='/jobs/available') View Available Jobs
+    .btn-parent
+        if user.role=="Recruiter"
+            a.btn.btn-full.profile-btn.bottom(href='/jobs') View previously posted jobs
+        else
+            a.btn.btn-full.profile-btn.bottom.applied(href='/jobs/applied') View applied jobs
+
+    

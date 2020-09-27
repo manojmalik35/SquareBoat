@@ -1,0 +1,9 @@
+extend base
+block header
+    include nav
+block content
+    h2
+        | Candidates who applied
+    .candidates
+        for candidate in candidates
+            include candidateCard

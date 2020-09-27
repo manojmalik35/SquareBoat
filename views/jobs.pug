@@ -1,0 +1,14 @@
+extend base
+block header
+    include nav
+block content
+    h2
+        if user.role=="Recruiter" 
+            | Posted Jobs
+        else if title=="Available Jobs"
+            | Available Jobs
+        else
+            | Applied Jobs
+    .jobs
+        for job in jobs
+            include jobCard

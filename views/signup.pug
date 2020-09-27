@@ -1,0 +1,29 @@
+extend base
+block content
+    h2 
+        | Signup
+    form.signup
+        .entry
+            .entry-text 
+                | What are you?
+            select#role(name='role')
+                option(value='Recruiter') Recruiter
+                option(value='Candidate') Candidate
+        .entry
+            .entry-text 
+                | Name
+            input(type='text' name='name' placeholder='Your Name' required)
+        .entry
+            .entry-text 
+                | Email
+            input(type='email' name='email' placeholder='Your Email' required)
+        .entry
+            .entry-text 
+                | Password
+            input(type='password' name='password' placeholder='Your Password' required)
+        .entry
+            .entry-text 
+                | Phone number
+            input(type='text' name='phone' placeholder='Your phone')
+        .btn-parent
+            button.btn.btn-full.form-button(type='submit') Sign Up
