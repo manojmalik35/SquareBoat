@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 const jwt = require('jsonwebtoken');
-const { KEY } = require("../configs/config");
+const KEY = process.env.KEY;
 
 module.exports.checkInput = function (req, res, next) {
     if (Object.keys(req.body).length == 0) {
@@ -51,8 +51,8 @@ module.exports.login = async function (req, res) {
             } else {
                 res.json({ data: "Wrong password" })
             }
-        }else{
-            res.json({data : "No such user exists"});
+        } else {
+            res.json({ data: "No such user exists" });
         }
     }
     catch (err) {
